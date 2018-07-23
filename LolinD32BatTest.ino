@@ -35,10 +35,10 @@ void loop()
 
 uint8_t BatteryPercent()
 {
-	return (analogRead(batteryPin) * 0.14881) - 250.0;
+	return (analogRead(batteryPin) * 0.14881) - 250.0; //simplified the map functions formula...
 }
 
-float BatteryVoltage()
+double BatteryVoltage()
 {
-	return analogRead(batteryPin) / 560.0;
+	return analogRead(batteryPin) / 560.0; //analogRead value divided by the Voltage gives roughly 560
 }
