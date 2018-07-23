@@ -17,18 +17,14 @@ void setup()
 
 void loop() 
 {
-	batteryPercent = BatteryPercent();
+	batteryPercent = 45; //BatteryPercent();
 	if (batteryPercent > 50)
 	{
 		digitalWrite(ledPin, LOW);
 	}
-	else if (batteryPercent <= 50 && digitalRead(ledPin))
+	else if (batteryPercent <= 50)
 	{
-		digitalWrite(ledPin, LOW);
-	}
-	else if (batteryPercent <= 50 && !digitalRead(ledPin))
-	{
-		digitalWrite(ledPin, HIGH);
+		digitalWrite(ledPin, !digitalRead(ledPin));
 	}
 	Serial.print(batteryPercent);
 	Serial.print("% | ");
